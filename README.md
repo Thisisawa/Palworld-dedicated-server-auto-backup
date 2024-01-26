@@ -1,5 +1,5 @@
 # 帕魯專用伺服器自動備份程式
-適用於windows系統的自動備份程式，依照設定時間自動備份遊戲世界檔案，不包含重啟功能  
+適用於windows系統的自動備份程式，依照設定時間自動備份遊戲世界檔案，不含重啟功能  
 
 放置於伺服器根目錄執行即可  
 ```
@@ -31,6 +31,7 @@ interval = 60
 
 # Palworld dedicated server backupper
 This script is for hosting server on Windows. It will backup the save folder to a RAR file. 
+Will not restart server.
 
 Put in server directory and run
 ```
