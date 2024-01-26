@@ -59,8 +59,8 @@ The script will automatic terminate when server shutdown, so you can run this sc
 pythonw start.py
 ```
 ## Batch file Version
-just give it two left click, this script run in background in default, will automatic terminate too.
-you can remove the2~4 rows to cancel it.
+just give it two left click, this script run in background in default, will automatic terminate too.  
+you can remove the 2~4 rows to cancel background mode.
 ### Settings
 Modify these value according to your needs
 
