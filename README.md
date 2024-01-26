@@ -29,7 +29,7 @@ file_count = 5
 interval = 60
 ```  
 
-# Palworld dedicated server auto backup
+# Palworld dedicated server backupper
 This script is for hosting server on Windows. It will backup the save folder to a RAR file. 
 
 Put in server directory and run
