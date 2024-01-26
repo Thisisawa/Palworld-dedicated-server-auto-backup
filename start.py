@@ -3,6 +3,7 @@ import time
 import psutil
 from win10toast import ToastNotifier
 import subprocess
+import math
 toaster = ToastNotifier()
 
 def backup_rar(src_dir, dst_dir, backup_files):
@@ -39,17 +40,16 @@ backup_files_folder = "Pal\Saved\SaveGames"
 # 備份檔數量
 file_count = 5
 # 備份間隔(秒)
-interval = 60
+interval = 300
 
 while True:
 
-    time.sleep(interval)
-
-    if server_health('PalServer.exe'):
-        print('正在運行 Running')
-    else:
-        toaster.show_toast("偵測到伺服器關閉，程式已停止""\n" 
-                           "server stopped, shutdown backup process")
-        exit()
+    for i in range(math.ceil(interval/10)):
+        time.sleep(10)
+        if server_health('PalServer.exe'):
+            print('Running')
+        else:
+            toaster.show_toast("偵測到伺服器關閉，程式已停止\n server stopped, shutdown backup process")
+            exit()
 
     backup_rar(target_folder, backup_files_folder, file_count)
