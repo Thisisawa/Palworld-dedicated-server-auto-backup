@@ -12,7 +12,7 @@ def backup_rar(src_dir, dst_dir, backup_files):
     rar_path = os.path.join(dst_dir, rar_name)
 
     # 生成檔案    
-    command = f'"C:\Program Files\WinRAR\Rar.exe" a -r {rar_path} {src_dir}'
+    command = f'"C:/Program Files/WinRAR/Rar.exe" a -r {rar_path} {src_dir}'
     subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 
     # list根目錄物件
@@ -34,9 +34,9 @@ def server_health(name):
     return False
 
 # 目標資料夾
-target_folder = "Pal\Saved\SaveGames/0"
+target_folder = "Pal/Saved/SaveGames/0"
 # 備份檔資料夾
-backup_files_folder = "Pal\Saved\SaveGames"
+backup_files_folder = "Pal/Saved/SaveGames"
 # 備份檔數量
 file_count = 5
 # 備份間隔(秒)
