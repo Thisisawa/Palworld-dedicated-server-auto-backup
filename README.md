@@ -2,6 +2,12 @@
 適用於windows系統的自動備份程式，依照設定時間自動備份遊戲世界檔案，不含重啟功能  
 
 放置於伺服器根目錄執行即可  
+## python版本說明
+安裝相依
+```
+pip install -r requirements.txt
+```
+啟動
 ```
 py start.py
 ```
@@ -9,17 +15,22 @@ py start.py
 ```
 pythonw start.py
 ```
-### 設定值
+## Batch file版本說明
+點擊兩下即啟動 預設背景執行 不會有視窗
+移除2~4行後會顯示視窗
+
+## 設定值
 根據你的需求更改程式內容  
 
-目標資料夾  
+
+py備份檔資料夾  
 ```
-target_folder = "Pal\Saved\SaveGames/0"
-```  
-備份檔資料夾  
+backup_files_folder = "Pal/Saved/SaveGames"
 ```
-backup_files_folder = "Pal\Saved\SaveGames"
-```  
+bat備份檔資料夾
+```
+set main_folder="Pal/Saved/SaveGames"
+```
 備份檔數量  
 ```
 file_count = 5
@@ -27,30 +38,39 @@ file_count = 5
 備份間隔(秒)  
 ```
 interval = 300
-```  
+```
+
 
 # Palworld dedicated server backupper
 This script is for hosting server on Windows. It will backup the save folder to a RAR file. 
 Will not restart server.
 
-Put in server directory and run
+## Python Version
+install packages
+```
+pip install -r requirements.txt
+```
+start script
 ```
 py start.py
 ```  
-The script will terminate when server shuts down, so you can run this script in the background.  
+The script will automatic terminate when server shutdown, so you can run this script in background.  
 ```
 pythonw start.py
 ```
+## Batch file Version
+just give it two left click, this script run in background in default, will automatic terminate too.
+you can remove the2~4 rows to cancel it.
 ### Settings
 Modify these value according to your needs
 
-Target folder
+py backup file folder
 ```
-target_folder = "Pal\Saved\SaveGames/0"
-```  
-Backup file folder
+backup_files_folder = "Pal/Saved/SaveGames"
 ```
-backup_files_folder = "Pal\Saved\SaveGames"
+bat backup file folder
+```
+backup_files_folder = "Pal/Saved/SaveGames"
 ```  
 Number of backup file keeps
 ```
