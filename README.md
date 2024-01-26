@@ -26,7 +26,7 @@ file_count = 5
 ```  
 備份間隔(秒)  
 ```
-interval = 60
+interval = 300
 ```  
 
 # Palworld dedicated server backupper
@@ -58,5 +58,5 @@ file_count = 5
 ```  
 Backup interval (seconds)
 ```
-interval = 60
+interval = 300
 ```  
