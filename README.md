@@ -1,7 +1,7 @@
 # 帕魯專用伺服器自動備份程式
 適用於windows系統的自動備份程式，依照設定時間自動備份遊戲世界檔案，不含重啟功能  
 
-放置於伺服器根目錄執行即可  
+任選一種，下載後放置於伺服器根目錄執行即可  
 ## python版本說明
 安裝相依
 ```
@@ -42,8 +42,10 @@ interval = 300
 
 
 # Palworld dedicated server backupper
-This script is for hosting server on Windows. It will backup the save folder to a RAR file. 
+This script is for hosting server on Windows. It will backup the save folder to a RAR or ZIP file. 
 Will not restart server.
+
+Choose Python or Batch file one, download and place it in the server directory to run. 
 
 ## Python Version
 install packages
