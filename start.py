@@ -15,7 +15,7 @@ file_count = 5
 # 備份間隔(秒)
 interval = 300
 
-def backup_rar(zip_path, dst_dir, backup_files):
+def tobackup(zip_path, dst_dir, backup_files):
     # 生成名稱
     zip_name = zipfile.ZipFile(dst_dir + time.strftime("%Y%m%d%H%M%S") + '.zip', 'w', zipfile.ZIP_DEFLATED)
     # 生成檔案    
@@ -45,22 +45,23 @@ def shutdown():
     toaster.show_toast("偵測到伺服器關閉，程式已停止\n server no longer there, stop backup process")
     exit()
 
-health_time = math.floor(interval/10)
-time_regulate = interval/10
-if health_time != time_regulate:
-    time_regulate = interval - health_time * 10
-
-print(time_regulate)
 while True:
-    time.sleep(time_regulate)
+    start_time = time.time()
     if server_health():
-        backup_rar(target_folder, backup_files_folder, file_count)
+        tobackup(target_folder, backup_files_folder, file_count)
     else:
         shutdown()
 
-    for i in range(health_time):
+    for i in range(math.floor(interval/10)):
+        if time.time() - start_time >= interval:
+            break
         time.sleep(10)
         if server_health():
             print('Running')
         else:
             shutdown()
+
+    remaining_time = interval - (time.time() - start_time)
+    if remaining_time > 0:
+        time.sleep(remaining_time)
+
