@@ -2,7 +2,6 @@ import os
 import time
 import psutil
 from win10toast import ToastNotifier
-import subprocess
 import math
 import zipfile
 toaster = ToastNotifier()
@@ -46,14 +45,20 @@ def shutdown():
     toaster.show_toast("偵測到伺服器關閉，程式已停止\n server no longer there, stop backup process")
     exit()
 
+health_time = math.floor(interval/10)
+time_regulate = interval/10
+if health_time != time_regulate:
+    time_regulate = interval - health_time * 10
+
+print(time_regulate)
 while True:
-    time.sleep(1)
+    time.sleep(time_regulate)
     if server_health():
         backup_rar(target_folder, backup_files_folder, file_count)
     else:
-        shutdown
+        shutdown()
 
-    for i in range(math.ceil(interval/10)):
+    for i in range(health_time):
         time.sleep(10)
         if server_health():
             print('Running')
