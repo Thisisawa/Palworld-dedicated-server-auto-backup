@@ -25,7 +25,7 @@ pythonw start.py
 
 py備份檔資料夾  
 ```
-backup_files_folder = "Pal/Saved/SaveGames"
+backup_files_folder = "Pal/Saved/SaveGames/"
 ```
 bat備份檔資料夾
 ```
@@ -68,7 +68,7 @@ Modify these value according to your needs
 
 py backup file folder
 ```
-backup_files_folder = "Pal/Saved/SaveGames"
+backup_files_folder = "Pal/Saved/SaveGames/"
 ```
 bat backup file folder
 ```
