@@ -37,6 +37,10 @@ for /f "skip=%file_count% delims=" %%A in ('dir /b /o-d /a-d "%main_folder%\*.zi
 
 timeout /t %interval%
 goto :start
+
 :end
 echo no server there, good bey
+if "%1"=="hide" goto :nogui_end
 pause
+
+:nogui_end
